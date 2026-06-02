@@ -14,14 +14,19 @@
       --linha: #D8E3F2;
       --texto: #172033;
       --muted: #64748B;
-      --atmosfera: url("https://images.unsplash.com/photo-1618005479492-bc36dc8aeaf2?auto=format&fit=crop&fm=jpg&q=82&w=2400&v=casa-sky-02");
-      --neblina-img: url("https://images.unsplash.com/photo-1618005479492-bc36dc8aeaf2?auto=format&fit=crop&fm=jpg&q=76&w=1800&v=casa-cloud-02");
+      --atmosfera: url("assets/atmosfera_casa/casa-atmosfera-ceu-neblina-v1.jpg");
+      --atmosfera-2: url("assets/atmosfera_casa/casa-atmosfera-luz-difusa-v1.jpg");
+      --atmosfera-3: url("assets/atmosfera_casa/casa-atmosfera-horizonte-suave-v1.jpg");
+      --atmosfera-4: url("assets/atmosfera_casa/casa-atmosfera-profundidade-suave-v1.jpg");
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--neblina);
+      background:
+        linear-gradient(180deg, rgba(248,250,252,.92), rgba(248,250,252,.96)),
+        var(--atmosfera) center top / cover fixed no-repeat,
+        var(--neblina);
       color: var(--texto);
       font-family: Satoshi, Inter, Arial, sans-serif;
       letter-spacing: 0;
@@ -30,7 +35,7 @@
     .shell {
       min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.34) 0%, rgba(248,250,252,.74) 56%, rgba(248,250,252,1) 100%),
+        linear-gradient(180deg, rgba(248,250,252,.22) 0%, rgba(248,250,252,.70) 62%, rgba(248,250,252,.98) 100%),
         radial-gradient(circle at 72% 28%, rgba(255,255,255,.84), transparent 22%),
         var(--atmosfera) center 42% / cover no-repeat;
     }
@@ -73,10 +78,7 @@
       color: var(--muted);
       font-size: 13px;
     }
-    .hero {
-      max-width: 880px;
-      padding-top: 80px;
-    }
+    .hero { max-width: 880px; padding-top: 80px; }
     .kicker, .eyebrow {
       color: var(--profundidade);
       font-size: 10px;
@@ -120,18 +122,9 @@
       align-items: end;
       margin-top: 82px;
     }
-    .line {
-      height: 1px;
-      background: var(--horizonte);
-    }
-    .note {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.58;
-    }
-    main {
-      padding: 72px clamp(24px, 7vw, 96px) 96px;
-    }
+    .line { height: 1px; background: var(--horizonte); }
+    .note { color: var(--muted); font-size: 14px; line-height: 1.58; }
+    main { padding: 72px clamp(24px, 7vw, 96px) 96px; }
     section {
       border-top: 1px solid var(--linha);
       padding-top: 36px;
@@ -152,12 +145,7 @@
       line-height: 1.22;
       font-weight: 400;
     }
-    p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.62;
-    }
+    p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.62; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -169,12 +157,8 @@
       padding: 28px;
       min-height: 196px;
     }
-    .panel.dark {
-      background: var(--noite);
-      color: var(--neblina);
-    }
-    .panel.dark h3,
-    .panel.dark .eyebrow { color: var(--neblina); }
+    .panel.dark { background: var(--noite); color: var(--neblina); }
+    .panel.dark h3, .panel.dark .eyebrow { color: var(--neblina); }
     .panel.dark p { color: #CFDDF0; }
     .statement {
       max-width: 900px;
@@ -192,26 +176,14 @@
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 16px;
     }
-    .step {
-      border-top: 1px solid var(--horizonte);
-      padding-top: 16px;
-      min-height: 116px;
-    }
-    .num {
-      color: var(--profundidade);
-      font-size: 12px;
-      margin-bottom: 15px;
-    }
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 22px;
-    }
+    .step { border-top: 1px solid var(--horizonte); padding-top: 16px; min-height: 116px; }
+    .num { color: var(--profundidade); font-size: 12px; margin-bottom: 15px; }
+    .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
     .visual {
       min-height: 440px;
       background:
         linear-gradient(180deg, rgba(248,250,252,.18), rgba(248,250,252,.68)),
-        var(--atmosfera) center 45% / cover no-repeat;
+        var(--atmosfera-2) center 45% / cover no-repeat;
       border: 1px solid var(--linha);
       display: grid;
       place-items: center;
@@ -246,42 +218,26 @@
       background:
         linear-gradient(180deg, rgba(248,250,252,.06), rgba(248,250,252,.46)),
         radial-gradient(circle at 50% 38%, rgba(255,255,255,.74), transparent 28%),
-        var(--atmosfera) center 42% / cover no-repeat;
+        var(--atmosfera-2) center 42% / cover no-repeat;
     }
     .photo.stack {
       min-height: 250px;
       background:
         linear-gradient(180deg, rgba(248,250,252,.08), rgba(248,250,252,.54)),
-        var(--neblina-img) center 44% / cover no-repeat;
+        var(--atmosfera-3) center 44% / cover no-repeat;
     }
-    .sky-note {
-      max-width: 620px;
-      margin: 0 0 26px;
-      color: var(--muted);
-    }
+    .sky-note { max-width: 620px; margin: 0 0 26px; color: var(--muted); }
     .sky-strip {
       min-height: 260px;
       margin-top: 22px;
       border: 1px solid var(--linha);
       background:
         linear-gradient(90deg, rgba(248,250,252,.9), rgba(248,250,252,.16), rgba(248,250,252,.9)),
-        var(--atmosfera) center 46% / cover no-repeat;
+        var(--atmosfera-4) center 46% / cover no-repeat;
     }
-    .word-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .word {
-      border-top: 1px solid var(--linha);
-      padding-top: 12px;
-      color: var(--texto);
-      font-size: 14px;
-    }
-    .panel.dark .word {
-      color: #CFDDF0;
-      border-color: rgba(220,238,255,.2);
-    }
+    .word-list { display: grid; gap: 10px; margin-top: 18px; }
+    .word { border-top: 1px solid var(--linha); padding-top: 12px; color: var(--texto); font-size: 14px; }
+    .panel.dark .word { color: #CFDDF0; border-color: rgba(220,238,255,.2); }
     footer {
       padding: 42px clamp(24px, 7vw, 96px);
       background: var(--noite);
@@ -305,143 +261,26 @@
   <div class="shell">
     <header>
       <nav>
-        <div class="brand">
-          <div class="logotype">CASA</div>
-          <span class="mark"></span>
-        </div>
-        <div class="nav-links">
-          <a href="#origem">Origem</a>
-          <a href="#atlas">Método Atlas</a>
-          <a href="#experiencia">Experiência</a>
-          <a href="#presenca">Presença</a>
-        </div>
+        <div class="brand"><div class="logotype">CASA</div><span class="mark"></span></div>
+        <div class="nav-links"><a href="#origem">Origem</a><a href="#atlas">Método Atlas</a><a href="#experiencia">Experiência</a><a href="#presenca">Presença</a></div>
       </nav>
-
       <div class="hero">
         <div class="kicker">Experiência Criativa</div>
         <h1>Histórias encontram direção.</h1>
         <p class="lead">A CASA ajuda pessoas, marcas e projetos a encontrarem clareza através de estratégia, identidade e narrativa.</p>
       </div>
-
-      <div class="hero-foot">
-        <div class="line"></div>
-        <p class="note">A CASA não começa pela peça. Começa pela origem, organiza a história e transforma intenção em presença.</p>
-      </div>
+      <div class="hero-foot"><div class="line"></div><p class="note">A CASA não começa pela peça. Começa pela origem, organiza a história e transforma intenção em presença.</p></div>
     </header>
   </div>
-
   <main>
-    <section id="origem">
-      <h2>A CASA não é uma agência.</h2>
-      <div class="statement">
-        <p>A CASA é uma experiência criativa de Branding, Motion e Audiovisual. O produto real é direção.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>O que a experiência revela</h2>
-      <div class="grid">
-        <div class="panel"><div class="eyebrow">Clareza</div><h3>Organizar o que estava disperso.</h3><p>Entender a história, separar ruído de essência e dar nome ao que realmente sustenta a marca.</p></div>
-        <div class="panel"><div class="eyebrow">Direção</div><h3>Escolher um caminho com intenção.</h3><p>Transformar percepção, linguagem e decisões em um sistema coerente.</p></div>
-        <div class="panel"><div class="eyebrow">Presença</div><h3>Existir com consistência.</h3><p>Construir expressão visual, narrativa e audiovisual a partir de uma origem compreendida.</p></div>
-      </div>
-    </section>
-
-    <section id="atlas">
-      <h2>Método Atlas</h2>
-      <p class="lead">Atlas é o sistema de orientação estratégica da CASA. Ele descobre, organiza, traduz e direciona.</p>
-      <div class="flow">
-        <div class="step"><div class="num">01</div><p>Chegada</p></div>
-        <div class="step"><div class="num">02</div><p>Sessão Atlas</p></div>
-        <div class="step"><div class="num">03</div><p>Mapa de Origem</p></div>
-        <div class="step"><div class="num">04</div><p>Direção Atlas</p></div>
-        <div class="step"><div class="num">05</div><p>Construção</p></div>
-        <div class="step"><div class="num">06</div><p>Manifesto</p></div>
-        <div class="step"><div class="num">07</div><p>Entrega</p></div>
-        <div class="step"><div class="num">08</div><p>Presença CASA</p></div>
-      </div>
-    </section>
-
-    <section id="experiencia">
-      <h2>Direção Atlas é o ponto de entrada.</h2>
-      <div class="split">
-        <div class="panel dark">
-          <div class="eyebrow">Pergunta central</div>
-          <h3>Como tudo começou?</h3>
-          <p>A partir dessa pergunta, a CASA investiga origem, intenção, memória, tensão, desejo e caminho possível.</p>
-        </div>
-        <div class="panel">
-          <div class="eyebrow">Ao final</div>
-          <h3>Um mapa para decidir com clareza.</h3>
-          <p>A experiência revela história, essência, posicionamento inicial, direção criativa e próximos passos de construção.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="presenca">
-      <h2>Atmosfera visual</h2>
-      <p class="sky-note">A atmosfera da CASA deve parecer céu aberto, nuvem suave e luz natural. A imagem aparece como respiro, não como paisagem.</p>
-      <div class="atmosphere-grid">
-        <div class="photo"></div>
-        <div class="grid">
-          <div class="panel"><div class="eyebrow">Imagem</div><h3>Céu, nuvens e luz natural.</h3><p>A imagem atmosférica sustenta a sensação da marca: calma, clareza, leveza e orientação.</p></div>
-          <div class="photo stack"></div>
-          <div class="panel dark"><div class="eyebrow">Presença</div><h3>A marca respira antes de falar.</h3><p>O espaço negativo não é vazio. É parte da sofisticação silenciosa da experiência.</p></div>
-        </div>
-      </div>
-      <div class="sky-strip"></div>
-      <div style="height:22px"></div>
-      <div class="split">
-        <div class="visual">
-          <div class="visual-inner">
-            <span>CASA</span>
-          </div>
-        </div>
-        <div class="grid">
-          <div class="panel"><div class="eyebrow">Universo</div><h3>Atmosfera, horizonte, neblina e profundidade.</h3><p>A marca usa espaço negativo, luz difusa e composição silenciosa para criar percepção de calma e sofisticação.</p></div>
-          <div class="panel"><div class="eyebrow">Regra</div><h3>Consistência antes de criatividade.</h3><p>Quando algo estiver aprovado, não reinventar. Aplicar corretamente é parte da inteligência da marca.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Linguagem CASA</h2>
-      <div class="split">
-        <div class="panel">
-          <div class="eyebrow">Evitar</div>
-          <h3>Palavras frias</h3>
-          <div class="word-list">
-            <div class="word">preço</div>
-            <div class="word">compra</div>
-            <div class="word">orçamento</div>
-            <div class="word">pacote</div>
-          </div>
-        </div>
-        <div class="panel dark">
-          <div class="eyebrow">Preferir</div>
-          <h3>Palavras de experiência</h3>
-          <div class="word-list">
-            <div class="word">entrada na experiência</div>
-            <div class="word">travessia</div>
-            <div class="word">clareza</div>
-            <div class="word">direção</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Para quem a CASA existe</h2>
-      <div class="statement">
-        <p>Para pessoas, marcas e projetos que sentem que existe algo verdadeiro a ser construído, mas ainda precisam encontrar a direção certa para aparecer no mundo.</p>
-      </div>
-    </section>
+    <section id="origem"><h2>A CASA não é uma agência.</h2><div class="statement"><p>A CASA é uma experiência criativa de Branding, Motion e Audiovisual. O produto real é direção.</p></div></section>
+    <section><h2>O que a experiência revela</h2><div class="grid"><div class="panel"><div class="eyebrow">Clareza</div><h3>Organizar o que estava disperso.</h3><p>Entender a história, separar ruído de essência e dar nome ao que realmente sustenta a marca.</p></div><div class="panel"><div class="eyebrow">Direção</div><h3>Escolher um caminho com intenção.</h3><p>Transformar percepção, linguagem e decisões em um sistema coerente.</p></div><div class="panel"><div class="eyebrow">Presença</div><h3>Existir com consistência.</h3><p>Construir expressão visual, narrativa e audiovisual a partir de uma origem compreendida.</p></div></div></section>
+    <section id="atlas"><h2>Método Atlas</h2><p class="lead">Atlas é o sistema de orientação estratégica da CASA. Ele descobre, organiza, traduz e direciona.</p><div class="flow"><div class="step"><div class="num">01</div><p>Chegada</p></div><div class="step"><div class="num">02</div><p>Sessão Atlas</p></div><div class="step"><div class="num">03</div><p>Mapa de Origem</p></div><div class="step"><div class="num">04</div><p>Direção Atlas</p></div><div class="step"><div class="num">05</div><p>Construção</p></div><div class="step"><div class="num">06</div><p>Manifesto</p></div><div class="step"><div class="num">07</div><p>Entrega</p></div><div class="step"><div class="num">08</div><p>Presença CASA</p></div></div></section>
+    <section id="experiencia"><h2>Direção Atlas é o ponto de entrada.</h2><div class="split"><div class="panel dark"><div class="eyebrow">Pergunta central</div><h3>Como tudo começou?</h3><p>A partir dessa pergunta, a CASA investiga origem, intenção, memória, tensão, desejo e caminho possível.</p></div><div class="panel"><div class="eyebrow">Ao final</div><h3>Um mapa para decidir com clareza.</h3><p>A experiência revela história, essência, posicionamento inicial, direção criativa e próximos passos de construção.</p></div></div></section>
+    <section id="presenca"><h2>Atmosfera visual</h2><p class="sky-note">A atmosfera da CASA deve parecer céu aberto, nuvem suave e luz natural. A imagem aparece como respiro, não como paisagem.</p><div class="atmosphere-grid"><div class="photo"></div><div class="grid"><div class="panel"><div class="eyebrow">Imagem</div><h3>Céu, nuvens e luz natural.</h3><p>A imagem atmosférica sustenta a sensação da marca: calma, clareza, leveza e orientação.</p></div><div class="photo stack"></div><div class="panel dark"><div class="eyebrow">Presença</div><h3>A marca respira antes de falar.</h3><p>O espaço negativo não é vazio. É parte da sofisticação silenciosa da experiência.</p></div></div></div><div class="sky-strip"></div><div style="height:22px"></div><div class="split"><div class="visual"><div class="visual-inner"><span>CASA</span></div></div><div class="grid"><div class="panel"><div class="eyebrow">Universo</div><h3>Atmosfera, horizonte, neblina e profundidade.</h3><p>A marca usa espaço negativo, luz difusa e composição silenciosa para criar percepção de calma e sofisticação.</p></div><div class="panel"><div class="eyebrow">Regra</div><h3>Consistência antes de criatividade.</h3><p>Quando algo estiver aprovado, não reinventar. Aplicar corretamente é parte da inteligência da marca.</p></div></div></div></section>
+    <section><h2>Linguagem CASA</h2><div class="split"><div class="panel"><div class="eyebrow">Evitar</div><h3>Palavras frias</h3><div class="word-list"><div class="word">preço</div><div class="word">compra</div><div class="word">orçamento</div><div class="word">pacote</div></div></div><div class="panel dark"><div class="eyebrow">Preferir</div><h3>Palavras de experiência</h3><div class="word-list"><div class="word">entrada na experiência</div><div class="word">travessia</div><div class="word">clareza</div><div class="word">direção</div></div></div></div></section>
+    <section><h2>Para quem a CASA existe</h2><div class="statement"><p>Para pessoas, marcas e projetos que sentem que existe algo verdadeiro a ser construído, mas ainda precisam encontrar a direção certa para aparecer no mundo.</p></div></section>
   </main>
-
-  <footer>
-    <p>CASA / ATLAS</p>
-    <p>Fundada por Renon Santos</p>
-    <p>Histórias encontram direção.</p>
-  </footer>
+  <footer><p>CASA / ATLAS</p><p>Fundada por Renon Santos</p><p>Histórias encontram direção.</p></footer>
 </body>
 </html>
