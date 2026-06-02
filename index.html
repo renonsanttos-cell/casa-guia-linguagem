@@ -14,8 +14,8 @@
       --linha: #D8E3F2;
       --texto: #172033;
       --muted: #64748B;
-      --atmosfera: url("https://images.unsplash.com/photo-1755936495529-e6dfa5f256f6?auto=format&fit=crop&fm=jpg&q=72&w=2400");
-      --neblina-img: url("https://images.unsplash.com/photo-1618005479492-bc36dc8aeaf2?auto=format&fit=crop&fm=jpg&q=72&w=1800");
+      --atmosfera: url("https://images.unsplash.com/photo-1618005479492-bc36dc8aeaf2?auto=format&fit=crop&fm=jpg&q=82&w=2400&v=casa-sky-02");
+      --neblina-img: url("https://images.unsplash.com/photo-1618005479492-bc36dc8aeaf2?auto=format&fit=crop&fm=jpg&q=76&w=1800&v=casa-cloud-02");
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -30,8 +30,9 @@
     .shell {
       min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.74) 0%, rgba(248,250,252,.88) 58%, rgba(248,250,252,1) 100%),
-        var(--atmosfera) center 38% / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.34) 0%, rgba(248,250,252,.74) 56%, rgba(248,250,252,1) 100%),
+        radial-gradient(circle at 72% 28%, rgba(255,255,255,.84), transparent 22%),
+        var(--atmosfera) center 42% / cover no-repeat;
     }
     header {
       min-height: 92vh;
@@ -209,8 +210,8 @@
     .visual {
       min-height: 440px;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.16), rgba(248,250,252,.34)),
-        var(--atmosfera) center 42% / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.18), rgba(248,250,252,.68)),
+        var(--atmosfera) center 45% / cover no-repeat;
       border: 1px solid var(--linha);
       display: grid;
       place-items: center;
@@ -235,7 +236,7 @@
     }
     .atmosphere-grid {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.1fr .9fr;
       gap: 22px;
       align-items: stretch;
     }
@@ -243,14 +244,28 @@
       min-height: 500px;
       border: 1px solid var(--linha);
       background:
-        linear-gradient(180deg, rgba(248,250,252,.08), rgba(248,250,252,.26)),
-        var(--atmosfera) center 40% / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.06), rgba(248,250,252,.46)),
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,.74), transparent 28%),
+        var(--atmosfera) center 42% / cover no-repeat;
     }
     .photo.stack {
       min-height: 250px;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.04), rgba(248,250,252,.2)),
-        var(--neblina-img) center / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.08), rgba(248,250,252,.54)),
+        var(--neblina-img) center 44% / cover no-repeat;
+    }
+    .sky-note {
+      max-width: 620px;
+      margin: 0 0 26px;
+      color: var(--muted);
+    }
+    .sky-strip {
+      min-height: 260px;
+      margin-top: 22px;
+      border: 1px solid var(--linha);
+      background:
+        linear-gradient(90deg, rgba(248,250,252,.9), rgba(248,250,252,.16), rgba(248,250,252,.9)),
+        var(--atmosfera) center 46% / cover no-repeat;
     }
     .word-list {
       display: grid;
@@ -365,14 +380,16 @@
 
     <section id="presenca">
       <h2>Atmosfera visual</h2>
+      <p class="sky-note">A atmosfera da CASA deve parecer céu aberto, nuvem suave e luz natural. A imagem aparece como respiro, não como paisagem.</p>
       <div class="atmosphere-grid">
         <div class="photo"></div>
         <div class="grid">
-          <div class="panel"><div class="eyebrow">Imagem</div><h3>Horizonte, neblina e profundidade.</h3><p>A imagem atmosférica sustenta a sensação da marca: calma, clareza, distância e orientação.</p></div>
+          <div class="panel"><div class="eyebrow">Imagem</div><h3>Céu, nuvens e luz natural.</h3><p>A imagem atmosférica sustenta a sensação da marca: calma, clareza, leveza e orientação.</p></div>
           <div class="photo stack"></div>
           <div class="panel dark"><div class="eyebrow">Presença</div><h3>A marca respira antes de falar.</h3><p>O espaço negativo não é vazio. É parte da sofisticação silenciosa da experiência.</p></div>
         </div>
       </div>
+      <div class="sky-strip"></div>
       <div style="height:22px"></div>
       <div class="split">
         <div class="visual">
