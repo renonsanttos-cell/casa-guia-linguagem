@@ -14,8 +14,8 @@
       --linha: #D8E3F2;
       --texto: #172033;
       --muted: #64748B;
-      --atmosfera: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2200&q=85");
-      --neblina-img: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=82");
+      --atmosfera: url("https://images.unsplash.com/photo-1755936495529-e6dfa5f256f6?auto=format&fit=crop&fm=jpg&q=72&w=2400");
+      --neblina-img: url("https://images.unsplash.com/photo-1618005479492-bc36dc8aeaf2?auto=format&fit=crop&fm=jpg&q=72&w=1800");
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -30,8 +30,8 @@
     .shell {
       min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.72) 0%, rgba(248,250,252,.9) 58%, rgba(248,250,252,1) 100%),
-        var(--atmosfera) center bottom / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.74) 0%, rgba(248,250,252,.88) 58%, rgba(248,250,252,1) 100%),
+        var(--atmosfera) center 38% / cover no-repeat;
     }
     header {
       min-height: 92vh;
@@ -209,8 +209,8 @@
     .visual {
       min-height: 440px;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.12), rgba(15,23,42,.42)),
-        var(--atmosfera) center / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.16), rgba(248,250,252,.34)),
+        var(--atmosfera) center 42% / cover no-repeat;
       border: 1px solid var(--linha);
       display: grid;
       place-items: center;
@@ -223,15 +223,15 @@
       border-bottom: 1px solid rgba(248,250,252,.34);
       display: grid;
       place-items: center;
-      color: white;
+      color: var(--noite);
       text-align: center;
     }
     .visual-inner span {
       display: block;
-      color: white;
+      color: var(--noite);
       font-size: clamp(34px, 6vw, 80px);
       letter-spacing: clamp(10px, 2vw, 24px);
-      text-shadow: 0 18px 42px rgba(15,23,42,.42);
+      text-shadow: 0 18px 42px rgba(248,250,252,.72);
     }
     .atmosphere-grid {
       display: grid;
@@ -240,16 +240,16 @@
       align-items: stretch;
     }
     .photo {
-      min-height: 520px;
+      min-height: 500px;
       border: 1px solid var(--linha);
       background:
-        linear-gradient(180deg, rgba(248,250,252,.08), rgba(15,23,42,.28)),
-        var(--atmosfera) center / cover no-repeat;
+        linear-gradient(180deg, rgba(248,250,252,.08), rgba(248,250,252,.26)),
+        var(--atmosfera) center 40% / cover no-repeat;
     }
     .photo.stack {
       min-height: 250px;
       background:
-        linear-gradient(180deg, rgba(248,250,252,.12), rgba(15,23,42,.2)),
+        linear-gradient(180deg, rgba(248,250,252,.04), rgba(248,250,252,.2)),
         var(--neblina-img) center / cover no-repeat;
     }
     .word-list {
